@@ -4,7 +4,7 @@
     "name": "MangoX",
     "description": "Wallhack ESP + Aim Assist. Supports CODM S20.",
     "price": 20,
-    "category":  "MangoAndroid",
+    "category": "MangoAndroid",
     "image": "https://dl.dropboxusercontent.com/scl/fi/77w59vzydw1wh6csepgv3/mango.jpg?rlkey=7k8fngdzde0cl2g6txd4uj3l5&dl=0"
   },
   {
@@ -12,7 +12,7 @@
     "name": "FluoriteIOS",
     "description": "Update Feature List and desc",
     "price": 15,
-    "category":  "FluoriteIOS",
+    "category": "FluoriteIOS",
     "image": "https://dl.dropboxusercontent.com/scl/fi/77w59vzydw1wh6csepgv3/mango.jpg?rlkey=7k8fngdzde0cl2g6txd4uj3l5&dl=0"
   },
   {
@@ -20,7 +20,7 @@
     "name": "AegisGC3",
     "description": "Update Feature List and desc",
     "price": 0,
-    "category":  "AegisGC3",
+    "category": "AegisGC3",
     "image": "https://dl.dropboxusercontent.com/scl/fi/77w59vzydw1wh6csepgv3/mango.jpg?rlkey=7k8fngdzde0cl2g6txd4uj3l5&dl=0"
   }
 ]

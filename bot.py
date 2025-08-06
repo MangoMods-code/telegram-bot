@@ -303,7 +303,7 @@ async def search_products(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     for product in matches:
         keyboard = [
-            [InlineKeyboardButton("🛒 Add to Cart", callback_data=f"buy_{product['id']}"
+            [InlineKeyboardButton("🛒 Add to Cart", callback_data=f"buy_{product['id']}")]
         ]
         await update.message.reply_photo(
             photo=product["image"],

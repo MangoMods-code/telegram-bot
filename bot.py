@@ -384,30 +384,23 @@ user_cart = {}
 user_orders = {}
 load_data()
 
-def main():
-    app = ApplicationBuilder().token(API_TOKEN).build()
+application = ApplicationBuilder().token(API_TOKEN).build()
 
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("list", list_products))
-    app.add_handler(CallbackQueryHandler(handle_callback))
-    app.add_handler(CommandHandler("cart", view_cart))
-    app.add_handler(CommandHandler("help", help_command))
-    app.add_handler(CommandHandler("checkout", checkout))
-    app.add_handler(CallbackQueryHandler(confirm_checkout, pattern="^confirm_checkout$"))
-    app.add_handler(CommandHandler("orders", view_orders))
-    app.add_handler(CommandHandler("addproduct", add_product))
-    app.add_handler(CommandHandler("removeproduct", remove_product))
-    app.add_handler(CommandHandler("categories", list_categories))
-    app.add_handler(CommandHandler("search", search_products))
-    app.add_handler(CallbackQueryHandler(category_filter, pattern=r"^cat_"))
-    app.add_handler(CommandHandler("stats", show_stats))
-
-
-
-
-    print("Bot is running. Press Ctrl+C to stop.")
-    app.run_polling()
-
+application.add_handler(CommandHandler("start", start))
+application.add_handler(CommandHandler("list", list_products))
+application.add_handler(CallbackQueryHandler(handle_callback))
+application.add_handler(CommandHandler("cart", view_cart))
+application.add_handler(CommandHandler("help", help_command))
+application.add_handler(CommandHandler("checkout", checkout))
+application.add_handler(CallbackQueryHandler(confirm_checkout, pattern="^confirm_checkout$"))
+application.add_handler(CommandHandler("orders", view_orders))
+application.add_handler(CommandHandler("addproduct", add_product))
+application.add_handler(CommandHandler("removeproduct", remove_product))
+application.add_handler(CommandHandler("categories", list_categories))
+application.add_handler(CommandHandler("search", search_products))
+application.add_handler(CallbackQueryHandler(category_filter, pattern=r"^cat_"))
+application.add_handler(CommandHandler("stats", show_stats))
 
 if __name__ == "__main__":
-    main()
+    print("Bot is running. Press Ctrl+C to stop.")
+    application.run_polling()

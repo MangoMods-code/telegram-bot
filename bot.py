@@ -28,13 +28,10 @@ def load_data():
 
 
 PRODUCTS_FILE = "products.json"
-products = load_products()
 
-def load_products():
-    if Path(PRODUCTS_FILE).exists():
-        with open(PRODUCTS_FILE, "r") as f:
-            return json.load(f)
-    return []
+
+
+products = load_products()
 
 def save_products():
     with open(PRODUCTS_FILE, "w") as f:

@@ -21,6 +21,18 @@ ADMINS = ["6407125860"]
 PAYPAL_USERNAME = os.getenv("PAYPAL_USERNAME")
 DROPBOX_TOKEN = os.getenv("DROPBOX_TOKEN")
 
+def load_products():
+    if Path(PRODUCTS_FILE).exists():
+        try:
+            with open(PRODUCTS_FILE, "r") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            print("❌ Error: products.json is corrupted.")
+            return []
+    return []
+
+products = load_products()
+
 def load_data():
     global user_cart, user_orders
     user_cart = json.loads(Path(CART_FILE).read_text()) if Path(CART_FILE).exists() else {}
@@ -355,18 +367,6 @@ def log_purchase(user_id, cart):
         for item in cart:
             f.write(f"  - {item['name']} (${item['price']})\n")
         f.write("\n")
-
-def load_products():
-    if Path(PRODUCTS_FILE).exists():
-        try:
-            with open(PRODUCTS_FILE, "r") as f:
-                return json.load(f)
-        except json.JSONDecodeError:
-            print("❌ Error: products.json is corrupted.")
-            return []
-    return []
-
-products = load_products()
 
 def backup_files():
     backup_dir = Path("backups") / datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

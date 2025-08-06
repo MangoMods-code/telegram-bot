@@ -29,10 +29,6 @@ def load_data():
 
 PRODUCTS_FILE = "products.json"
 
-
-
-products = load_products()
-
 def save_products():
     with open(PRODUCTS_FILE, "w") as f:
         json.dump(products, f, indent=2)
@@ -369,6 +365,8 @@ def load_products():
             print("❌ Error: products.json is corrupted.")
             return []
     return []
+
+products = load_products()
 
 def backup_files():
     backup_dir = Path("backups") / datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

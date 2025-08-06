@@ -20,6 +20,7 @@ ORDERS_FILE = "orders_data.json"
 ADMINS = ["6407125860"]
 PAYPAL_USERNAME = os.getenv("PAYPAL_USERNAME")
 DROPBOX_TOKEN = os.getenv("DROPBOX_TOKEN")
+PRODUCTS_FILE = "products.json"
 
 def load_products():
     if Path(PRODUCTS_FILE).exists():
@@ -39,7 +40,7 @@ def load_data():
     user_orders = json.loads(Path(ORDERS_FILE).read_text()) if Path(ORDERS_FILE).exists() else {}
 
 
-PRODUCTS_FILE = "products.json"
+
 
 def save_products():
     with open(PRODUCTS_FILE, "w") as f:
